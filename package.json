@@ -1,0 +1,31 @@
+{
+  "name": "thecomponents",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thecomponents/thecomponents"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist/* && webpack --mode production",
+    "watch": "webpack-dev-server --content-base public"
+  },
+  "devDependencies": {
+    "browserslist": "^4.12.0",
+    "css-loader": "^3.6.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "less-loader": "^6.1.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "mini-svg-data-uri": "^1.2.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
