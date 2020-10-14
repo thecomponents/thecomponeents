@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const SvgToMiniDataURI = require('mini-svg-data-uri');
@@ -9,9 +8,6 @@ const config = {
   entry: './src/library.scss',
   output: {
     path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['*', '.js'],
   },
   module: {
     rules: [
@@ -43,16 +39,9 @@ const config = {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
-      },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
     new MiniCssExtractPlugin({
       filename: 'library.css',
     }),
