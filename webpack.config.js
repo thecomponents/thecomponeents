@@ -6,7 +6,7 @@ const SvgToMiniDataURI = require('mini-svg-data-uri');
 
 const config = {
   devtool: 'eval',
-  entry: './src/library.less',
+  entry: './src/library.scss',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -16,7 +16,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.less$/,
+        test: /\.s[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -29,7 +29,7 @@ const config = {
               ],
             },
           },
-          'less-loader',
+          'sass-loader',
         ],
       },
       {
