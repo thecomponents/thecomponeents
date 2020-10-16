@@ -11,20 +11,24 @@
   },
   "scripts": {
     "build": "rm -rf ./dist/* && webpack --mode production",
-    "watch": "webpack-dev-server --content-base public"
+    "watch": "webpack-dev-server --content-base public",
+    "lint:styles": "stylelint src/**/*.* src/*.*"
   },
   "devDependencies": {
     "browserslist": "^4.12.0",
     "css-loader": "^3.6.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
-    "sass": "^1.27.0",
-    "sass-loader": "^10.0.3",
     "less-loader": "^6.1.1",
     "mini-css-extract-plugin": "^0.9.0",
     "mini-svg-data-uri": "^1.2.3",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "stylelint": "^13.7.2",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-order": "^4.1.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
