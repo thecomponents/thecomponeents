@@ -6,13 +6,13 @@
   "rules": {
     "indentation": "tab",
     "selector-max-id": 1,
-    "custom-property-pattern": "^([a-z][a-zA-Z0-9]+)+(--([a-z][a-zA-Z0-9]+))?$",
+    "custom-property-pattern": "^([a-z][a-zA-Z0-9]+)+(-([a-z][a-zA-Z0-9]+))*$",
     "selector-id-pattern": "^[a-z][a-zA-Z0-9]+$",
     "selector-class-pattern": "^((is|has|with)-)?[a-z][a-zA-Z0-9]+((__[a-z][a-zA-Z0-9]+(--((is|has|with)-)?[a-z][a-zA-Z0-9]+)?)|(--((is|has|with)-)?[a-z][a-zA-Z0-9]+))?$",
     "scss/at-mixin-pattern": "^[a-z][a-zA-Z0-9]+$",
     "scss/at-function-pattern": "^[a-z][a-zA-Z0-9]+$",
     "scss/percent-placeholder-pattern": "^[a-z][a-zA-Z0-9]+$",
-    "scss/dollar-variable-pattern": "^([a-z][a-zA-Z0-9]+)+(--([a-z][a-zA-Z0-9]+))?$",
+    "scss/dollar-variable-pattern": "^([a-z][a-zA-Z0-9]+)+(-([a-z0-9][a-zA-Z0-9]+))*$",
     "string-quotes": "double",
     "max-nesting-depth": 3,
     "order/order": [
