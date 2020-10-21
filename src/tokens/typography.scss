@@ -1,0 +1,18 @@
+@import "../utils/typography";
+
+:root {
+	--heading--textSize-2xl: 40px;
+	--heading--lineSize-2xl: calc(var(--heading--lineSize-2xl) * #{$lhRatio--xl});
+	--heading--textSize-xl: 32px;
+	--heading--lineSize-xl: calc(var(--heading--lineSize-xl) * #{$lhRatio--xl});
+	--heading--textSize-l: 24px;
+	--heading--lineSize-l: calc(var(--heading--lineSize-l) * #{$lhRatio--xl});
+	--heading--textSize-m: 16px;
+	--heading--lineSize-m: calc(var(--heading--lineSize-m) * #{$lhRatio--xl});
+	--heading--textSize-s: 12px;
+	--heading--lineSize-s: calc(var(--heading--lineSize-s) * #{$lhRatio--xl});
+	--heading--textSize-xs: 10px;
+	--heading--lineSize-xs: calc(var(--heading--lineSize-xs) * #{$lhRatio--xl});
+	--heading--textSize-2xs: 8px;
+	--heading--lineSize-2xs: calc(var(--heading--lineSize-2xs) * #{$lhRatio--xl});
+}
