@@ -1,0 +1,39 @@
+.heading {
+	&-2xl {
+		font-family: var(--heading-textSize-2xl);
+		font-weight: 700;
+		line-height: var(--heading-lineSize-2xl);
+	}
+
+	&-xl {
+		font-family: var(--heading-textSize-xl);
+		font-weight: 700;
+		line-height: var(--heading-lineSize-xl);
+	}
+
+	&-l {
+		font-family: var(--heading-textSize-l);
+		font-weight: 600;
+		line-height: var(--heading-lineSize-l);
+	}
+
+	&-m {
+		font-family: var(--heading-textSize-m);
+		font-weight: 600;
+		line-height: var(--heading-lineSize-m);
+	}
+
+	&-s {
+		font-family: var(--heading-textSize-s);
+		font-weight: 600;
+		line-height: var(--heading-lineSize-s);
+	}
+
+	&-xs {
+		font-family: var(--heading-textSize-xs);
+		font-weight: 400;
+		letter-spacing: 1px;
+		line-height: var(--heading-lineSize-xs);
+		text-transform: uppercase;
+	}
+}

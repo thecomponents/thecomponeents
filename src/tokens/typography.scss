@@ -1,0 +1,25 @@
+@import "../utils/typography";
+
+:root {
+	--heading-textSize-2xl: 40px;
+	--heading-lineSize-2xl: calc(var(--heading-lineSize-2xl) * #{$lhRatio-l});
+	--heading-textSize-xl: 32px;
+	--heading-lineSize-xl: calc(var(--heading-lineSize-xl) * #{$lhRatio-l});
+	--heading-textSize-l: 24px;
+	--heading-lineSize-l: calc(var(--heading-lineSize-l) * #{$lhRatio-l});
+	--heading-textSize-m: 16px;
+	--heading-lineSize-m: calc(var(--heading-lineSize-m) * #{$lhRatio-l});
+	--heading-textSize-s: 12px;
+	--heading-lineSize-s: calc(var(--heading-lineSize-s) * #{$lhRatio-l});
+	--heading-textSize-xs: 10px;
+	--heading-lineSize-xs: calc(var(--heading-lineSize-xs) * #{$lhRatio-l});
+
+	--text-textSize-l: 24px;
+	--text-lineSize-l: calc(var(--text-textSize-l) * #{$lhRatio-m});
+	--text-textSize-m: 16px;
+	--text-lineSize-m: calc(var(--text-textSize-m) * #{$lhRatio-m});
+	--text-textSize-s: 12px;
+	--text-lineSize-s: calc(var(--text-textSize-s) * #{$lhRatio-s});
+	--text-textSize-xs: 10px;
+	--text-lineSize-xs: calc(var(--text-textSize-xs) * #{$lhRatio-s});
+}
