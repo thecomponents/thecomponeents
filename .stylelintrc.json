@@ -1,8 +1,7 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "plugins": [
-    "stylelint-order",
-    "stylelint-selector-bem-pattern"
+    "stylelint-order"
   ],
   "rules": {
     "indentation": "tab",
