@@ -2,11 +2,11 @@ dist: trusty
 language: node_js
 os: linux
 node_js:
-  - "12.0.0"
+  - "12.18.1"
 cache:
   - node_modules
 install:
   - npm install
 script:
   - npm run lint:styles
-  - npm run build
+  - npm run build:library
