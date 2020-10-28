@@ -1,47 +1,48 @@
-white: #fff
-black: #000
-gray100: #f2f2f2
-gray200: #ddd
-gray300: #c9c9c9
-gray400: #999
-gray500: #6c6c6c
-gray600: #484848
-gray700: #2e2e2e
-gray800: #1e1e1e
-gray900: #1a1a1a
-blue100: #d1f1ff
-blue200: #a8ddff
-blue300: #7cc9ff
-blue400: #5cb4ff
-blue500: #1493ff
-blue600: #0c6ee2
-blue700: #0451bf
-blue800: #03379a
-blue900: #0a207f
-green100: #eeffce
-green200: #d4ff9a
-green300: #b1fe62
-green400: #93f61b
-green500: #4aed00
-green600: #0c0
-green700: #00ac00
-green800: #008a00
-green900: #007100
-yellow100: #fff7d6
-yellow200: #ffedac
-yellow300: #ffdd7d
-yellow400: #ffd15a
-yellow500: #fb0
-yellow600: #f19300
-yellow700: #cc7100
-yellow800: #a75400
-yellow900: #8b3e00
-red100: #ffe3d2
-red200: #ffbea6
-red300: #ff9277
-red400: #ff6456
-red500: #f00
-red600: #ff0003
-red700: #d9001d
-red800: #ad0022
-red900: #930026
+colors:
+  white: "#fff"
+  black: "#000"
+  gray100: "#f2f2f2"
+  gray200: "#ddd"
+  gray300: "#c9c9c9"
+  gray400: "#999"
+  gray500: "#6c6c6c"
+  gray600: "#484848"
+  gray700: "#2e2e2e"
+  gray800: "#1e1e1e"
+  gray900: "#1a1a1a"
+  blue100: "#d1f1ff"
+  blue200: "#a8ddff"
+  blue300: "#7cc9ff"
+  blue400: "#5cb4ff"
+  blue500: "#1493ff"
+  blue600: "#0c6ee2"
+  blue700: "#0451bf"
+  blue800: "#03379a"
+  blue900: "#0a207f"
+  green100: "#eeffce"
+  green200: "#d4ff9a"
+  green300: "#b1fe62"
+  green400: "#93f61b"
+  green500: "#4aed00"
+  green600: "#0c0"
+  green700: "#00ac00"
+  green800: "#008a00"
+  green900: "#007100"
+  yellow100: "#fff7d6"
+  yellow200: "#ffedac"
+  yellow300: "#ffdd7d"
+  yellow400: "#ffd15a"
+  yellow500: "#fb0"
+  yellow600: "#f19300"
+  yellow700: "#cc7100"
+  yellow800: "#a75400"
+  yellow900: "#8b3e00"
+  red100: "#ffe3d2"
+  red200: "#ffbea6"
+  red300: "#ff9277"
+  red400: "#ff6456"
+  red500: "#f00"
+  red600: "#ff0003"
+  red700: "#d9001d"
+  red800: "#ad0022"
+  red900: "#930026"
