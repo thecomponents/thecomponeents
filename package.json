@@ -10,10 +10,11 @@
     "npm": "6.x"
   },
   "scripts": {
+    "build:colorTokens": "node tools/builder-colorTokens.js",
     "build:textColors": "node tools/builder-textColors.js",
     "build:library": "rm -rf ./dist/* && webpack --mode production",
     "watch": "webpack-dev-server --content-base public",
-    "lint:styles": "stylelint src/**/*.* src/*.*"
+    "lint:styles": "stylelint src/**/*.scss src/*.scss"
   },
   "husky": {
     "hooks": {
