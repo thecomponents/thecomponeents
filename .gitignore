@@ -108,3 +108,6 @@ dist
 
 # build dist folder
 dist/
+
+# dynamic generated files
+src/tokens/*-generated.scss
