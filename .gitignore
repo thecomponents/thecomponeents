@@ -110,4 +110,4 @@ dist
 dist/
 
 # dynamic generated files
-src/tokens/*-generated.scss
+src/maps/*

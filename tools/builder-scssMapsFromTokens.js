@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 
 let tokens = {};
 const colorTokensFile = path.join(__dirname, '../src/tokens/colors.yml');
-const tokensScssFile = path.join(__dirname, '../src/tokens/colors-generated.scss');
+const tokensScssFile = path.join(__dirname, '../src/maps/colors.scss');
 
 try {
   let fileContents = fs.readFileSync(colorTokensFile, 'utf8');
