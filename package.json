@@ -10,7 +10,8 @@
     "npm": "6.x"
   },
   "scripts": {
-    "build:colorTokens": "mkdir src/maps && node tools/builder-colorTokens.js",
+    "build:scssMaps": "mkdir -p src/maps && node tools/builder-scssMapsFromTokens.js colors typography scale",
+    "build:scssMaps:debug": "mkdir -p src/maps && node tools/builder-scssMapsFromTokens.js --debug colors typography scale",
     "build:library": "rm -rf ./dist/* && webpack --mode production",
     "watch": "webpack-dev-server --content-base public",
     "lint:styles": "stylelint src/**/*.scss src/*.scss"
