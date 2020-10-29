@@ -43,7 +43,7 @@ categories.forEach((category) => {
       .replace("\")", "\"\n)") // break line before closing )
       .replace(/":"/g, "\": \"") // add space after token name's :
       .replace(/"[a-z]\w+": [(]/g, (s) => `$${s.replace(/"/g, '')}`) // add $ in the beginning of variable name
-      .replace(/"[a-z0-9]\w+": /g, (s) => `\t${s}`); // add tabs in indent
+      .replace(/"[a-z0-9]\w*": /g, (s) => `\t${s}`); // add tabs in indent
   }
 
   console.log(`| ${category} map has been created${debug ? ':' : ''}`);
