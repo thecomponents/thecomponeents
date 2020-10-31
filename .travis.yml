@@ -9,4 +9,5 @@ install:
   - npm install
 script:
   - npm run lint:styles
+  - npm run build:scssMaps
   - npm run build:library
