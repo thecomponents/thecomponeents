@@ -31,3 +31,6 @@ text:
   xs:
     size: "10px"
     lineSizeMultiplier: "s"
+
+import:
+  - "../utils/typography"
