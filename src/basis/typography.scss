@@ -1,0 +1,17 @@
+@use "src/maps/typography";
+
+:root {
+	@each $group, $scale, $size, $ratio in typography.$typography {
+		--#{$group}-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
+		--#{$group}-lineSize-#{$scale}: calc(var(--#{$group}-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
+	}
+	//@each $scale, $size, $ratio in ng-typography.$heading {
+	//	--heading-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
+	//	--heading-lineSize-#{$scale}: calc(var(--heading-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
+	//}
+	//
+	//@each $scale, $size, $ratio in ng-typography.$heading {
+	//	--text-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
+	//	--text-lineSize-#{$scale}: calc(var(--text-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
+	//}
+}

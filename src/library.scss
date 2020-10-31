@@ -1,11 +1,11 @@
-@use "./tokens/typography";
-
 @use "./basis/reset";
 @use "./basis/colors";
 @use "./basis/scale";
+@use "./basis/typography";
 
 @use "src/helpers/fontFamily";
 @use "src/helpers/heading";
+@use "src/helpers/textColor";
 @use "src/helpers/textSizes";
 @use "src/helpers/textStyles";
 @use "src/helpers/textWeight";
