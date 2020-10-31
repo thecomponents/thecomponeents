@@ -1,21 +1,12 @@
+@use "src/maps/typography";
+
 .text {
-	&-l {
-		font-family: var(--text-textSize-l);
-		line-height: var(--text-lineSize-l);
-	}
-
-	&-m {
-		font-family: var(--text-textSize-m);
-		line-height: var(--text-lineSize-m);
-	}
-
-	&-s {
-		font-family: var(--text-textSize-s);
-		line-height: var(--text-lineSize-s);
-	}
-
-	&-xs {
-		font-family: var(--text-textSize-xs);
-		line-height: var(--text-lineSize-xs);
+	@each $group, $scale, $size, $ratio in typography.$typography {
+		@if $group == "text" {
+			&-#{$scale} {
+				font-family: var(--text-textSize-#{$scale});
+				line-height: var(--text-lineSize-#{$scale});
+			}
+		}
 	}
 }
