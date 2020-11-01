@@ -1,7 +1,10 @@
+const ymlToScssMapParser = require("./ymlToScssMapParser");
+
 function ymlToScssTypographyParser(data) {
   let typography = [];
   let parsedTypography;
   let imports = '';
+  let weights = '';
 
   Object.keys(data).forEach((typographyCategory) => {
     if (typographyCategory === 'import') {
@@ -10,6 +13,13 @@ function ymlToScssTypographyParser(data) {
 
         imports = imports += currentImport;
       });
+    } else if (typographyCategory === 'weight') {
+      const dataWithKey = {
+        weight: {
+          ...data[typographyCategory]
+        }
+      }
+      weights = ymlToScssMapParser(dataWithKey);
     } else {
       let keyCategory = typographyCategory;
       let keyScale;
@@ -33,7 +43,7 @@ function ymlToScssTypographyParser(data) {
     .replace(/","/g, ",\n")
     .replace(/\("/g, `\t("`);
 
-  return `${imports}\n${parsedTypography}`;
+  return `${imports}\n${parsedTypography}\n${weights}`;
 }
 
 module.exports = ymlToScssTypographyParser;
