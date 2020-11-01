@@ -21,7 +21,7 @@ function ymlToScssTypographyParser(data) {
       }
       weights = ymlToScssMapParser(dataWithKey);
     } else {
-      let keyCategory = typographyCategory;
+      let keyCategory = {[typographyCategory]: []};
       let keyScale;
       let keySize;
       let keyMultiplier;
@@ -31,17 +31,26 @@ function ymlToScssTypographyParser(data) {
         keySize = data[typographyCategory][scale].size;
         keyMultiplier = data[typographyCategory][scale].lineSizeMultiplier;
 
-        typography.push(`('${keyCategory}' '${keyScale}' ${keySize} $lhRatio-${keyMultiplier})`);
+        keyCategory[typographyCategory].push(`('${keyScale}' ${keySize} $lhRatio-${keyMultiplier})`)
       });
+
+      typography.push(keyCategory);
     }
   });
 
   parsedTypography = JSON.stringify(typography)
-    .replace(`["(`, `$typography: (\n(`) // replace start array bracket with scss variable and (
-    .replace(`)"]`, `)\n);\n`) // replace end array bracket with );
-    .replace(/'/g, "\"")
-    .replace(/","/g, ",\n")
-    .replace(/\("/g, `\t("`);
+    .slice(2,-2) // remove beginning [{ and end }]
+    .replace(/:\[/g, ": \n") // remove :[ and add new line
+    .replace(/]/g, ";\n") // replace ] with ; and new line
+    .replace(/},{/g, "\n") // change array keys separator with new line
+    .replace(/","/g, ",\n") // break lines
+    .replace(/"/g, "") // remove doublequotes
+    .replace(/'/g, "\"") // replace single quotes with doublequotes
+    .replace(/\("/g, `\t("`) // add tab indents
+    .replace(/[a-z0-9]\w+:/g, (s) => `$${s}`); // add $ to key name
+
+
+  console.log(parsedTypography);
 
   return `${imports}\n${parsedTypography}\n${weights}`;
 }
