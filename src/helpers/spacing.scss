@@ -1,121 +1,13 @@
+@use "../maps/scale";
+
 .spacing {
-	&-bottom {
-		&-s {
-			margin-bottom: var(--scale-s);
-		}
+	$directions: ("top", "right", "bottom", "left");
 
-		&-m {
-			margin-bottom: var(--scale-m);
-		}
-
-		&-l {
-			margin-bottom: var(--scale-l);
-		}
-
-		&-xl {
-			margin-bottom: var(--scale-xl);
-		}
-
-		&-2xl {
-			margin-bottom: var(--scale-2xl);
-		}
-
-		&-3xl {
-			margin-bottom: var(--scale-3xl);
-		}
-
-		&-4xl {
-			margin-bottom: var(--scale-4xl);
-		}
-	}
-
-	&-top {
-		&-s {
-			margin-top: var(--scale-s);
-		}
-
-		&-m {
-			margin-top: var(--scale-m);
-		}
-
-		&-l {
-			margin-top: var(--scale-l);
-		}
-
-		&-xl {
-			margin-top: var(--scale-xl);
-		}
-
-		&-2xl {
-			margin-top: var(--scale-2xl);
-		}
-
-		&-3xl {
-			margin-top: var(--scale-3xl);
-		}
-
-		&-4xl {
-			margin-top: var(--scale-4xl);
-		}
-	}
-
-	&-left {
-		&-s {
-			margin-left: var(--scale-s);
-		}
-
-		&-m {
-			margin-left: var(--scale-m);
-		}
-
-		&-l {
-			margin-left: var(--scale-l);
-		}
-
-		&-xl {
-			margin-left: var(--scale-xl);
-		}
-
-		&-2xl {
-			margin-left: var(--scale-2xl);
-		}
-
-		&-3xl {
-			margin-left: var(--scale-3xl);
-		}
-
-		&-4xl {
-			margin-left: var(--scale-4xl);
-		}
-	}
-
-	&-right {
-		&-s {
-			margin-right: var(--scale-s);
-		}
-
-		&-m {
-			margin-right: var(--scale-m);
-		}
-
-		&-l {
-			margin-right: var(--scale-l);
-		}
-
-		&-xl {
-			margin-right: var(--scale-xl);
-		}
-
-		&-2xl {
-			margin-right: var(--scale-2xl);
-		}
-
-		&-3xl {
-			margin-right: var(--scale-3xl);
-		}
-
-		&-4xl {
-			margin-right: var(--scale-4xl);
+	@each $direction in $directions {
+		&-#{$direction} {
+			@each $scale, $value in scale.$scale {
+				margin-#{$direction}: var(--scale-#{$scale});
+			}
 		}
 	}
 }
