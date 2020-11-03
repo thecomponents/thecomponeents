@@ -3,7 +3,7 @@
 .weight {
 	@each $name, $value in typography.$weight {
 		&-#{$name} {
-			font-weight: $value;
+			font-weight: var(--textweight-#{$name});
 		}
 	}
 }
