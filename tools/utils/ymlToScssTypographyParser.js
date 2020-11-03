@@ -40,17 +40,14 @@ function ymlToScssTypographyParser(data) {
 
   parsedTypography = JSON.stringify(typography)
     .slice(2,-2) // remove beginning [{ and end }]
-    .replace(/:\[/g, ": \n") // remove :[ and add new line
-    .replace(/]/g, ";\n") // replace ] with ; and new line
+    .replace(/:\[/g, ": (\n") // remove :[ and add new line
+    .replace(/]/g, "\n);\n") // replace ] with ; and new line
     .replace(/},{/g, "\n") // change array keys separator with new line
     .replace(/","/g, ",\n") // break lines
     .replace(/"/g, "") // remove doublequotes
     .replace(/'/g, "\"") // replace single quotes with doublequotes
     .replace(/\("/g, `\t("`) // add tab indents
     .replace(/[a-z0-9]\w+:/g, (s) => `$${s}`); // add $ to key name
-
-
-  console.log(parsedTypography);
 
   return `${imports}\n${parsedTypography}\n${weights}`;
 }
