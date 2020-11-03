@@ -10,6 +10,7 @@
     "npm": "6.x"
   },
   "scripts": {
+    "dependencies": "npm install && npm run build:scssMaps && npm run build:library",
     "build:scssMaps": "mkdir -p src/maps && node tools/builder-scssMapsFromTokens.js",
     "build:scssMaps:debug": "mkdir -p src/maps && node tools/builder-scssMapsFromTokens.js --debug",
     "build:library": "rm -rf ./dist/* && webpack --mode production",
@@ -19,8 +20,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:styles",
-      "pre-push": "npm run lint:styles"
+      "pre-commit": "npm run lint:styles && npm run lint:js",
+      "pre-push": "npm run lint:styles && npm run lint:js"
     }
   },
   "dependencies": {
