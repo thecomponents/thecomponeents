@@ -1,12 +1,10 @@
 @use "src/maps/typography";
 
 .text {
-	@each $group, $scale, $size, $ratio in typography.$typography {
-		@if $group == "text" {
-			&-#{$scale} {
-				font-family: var(--text-textSize-#{$scale});
-				line-height: var(--text-lineSize-#{$scale});
-			}
+	@each $scale, $size, $ratio in typography.$text {
+		&-#{$scale} {
+			font-family: var(--text-textSize-#{$scale});
+			line-height: var(--text-lineSize-#{$scale});
 		}
 	}
 }
