@@ -9,4 +9,7 @@
 		--text-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
 		--text-lineSize-#{$scale}: calc(var(--text-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
 	}
+	@each $name, $value in typography.$weight {
+		--textweight-#{$name}: #{$value}; // stylelint-disable-line custom-property-pattern
+	}
 }

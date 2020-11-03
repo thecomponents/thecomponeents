@@ -14,7 +14,8 @@
     "build:scssMaps:debug": "mkdir -p src/maps && node tools/builder-scssMapsFromTokens.js --debug",
     "build:library": "rm -rf ./dist/* && webpack --mode production",
     "watch": "webpack-dev-server --content-base public",
-    "lint:styles": "stylelint src/**/*.scss src/*.scss"
+    "lint:styles": "stylelint ./src/**/*.scss ./src/*.scss",
+    "lint:js": "eslint ./tools --ext .js"
   },
   "husky": {
     "hooks": {
@@ -22,13 +23,19 @@
       "pre-push": "npm run lint:styles"
     }
   },
+  "dependencies": {
+    "js-yaml": "^3.14.0"
+  },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "browserslist": "^4.12.0",
     "css-loader": "^3.6.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.3.0",
-    "js-yaml": "^3.14.0",
     "mini-css-extract-plugin": "^0.9.0",
     "mini-svg-data-uri": "^1.2.3",
     "postcss-loader": "^3.0.0",
