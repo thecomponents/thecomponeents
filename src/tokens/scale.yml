@@ -1,0 +1,8 @@
+scale:
+  s: "4px"
+  m: "8px"
+  l: "16px"
+  xl: "24px"
+  2xl: "32px"
+  3xl: "48px"
+  4xl: "64px"
