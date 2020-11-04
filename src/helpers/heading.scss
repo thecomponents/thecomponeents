@@ -1,39 +1,40 @@
+@use "sass:map";
+@use "../maps/typography";
+
+$headingExtensions: (
+	"2xl": (
+		"font-weight": var(--textweight-bold)
+	),
+	"xl": (
+		"font-weight": var(--textweight-bold)
+	),
+	"l": (
+		"font-weight": var(--textweight-semibold)
+	),
+	"m": (
+		"font-weight": var(--textweight-semibold)
+	),
+	"s": (
+		"font-weight": var(--textweight-semibold)
+	),
+	"xs": (
+		"font-weight": var(--textweight-regular),
+		"letter-spacing": 1px,
+		"text-transform": "uppercase",
+	),
+);
+
 .heading {
-	&-2xl {
-		font-family: var(--heading-textSize-2xl);
-		font-weight: 700;
-		line-height: var(--heading-lineSize-2xl);
-	}
+	@each $scale, $size, $ratio in typography.$heading {
+		&-#{$scale} {
+			font-family: var(--heading-textSize-#{$scale});
+			line-height: var(--heading-lineSize-#{$scale});
 
-	&-xl {
-		font-family: var(--heading-textSize-xl);
-		font-weight: 700;
-		line-height: var(--heading-lineSize-xl);
-	}
+			$extensions: map.get($headingExtensions, $scale);
 
-	&-l {
-		font-family: var(--heading-textSize-l);
-		font-weight: 600;
-		line-height: var(--heading-lineSize-l);
-	}
-
-	&-m {
-		font-family: var(--heading-textSize-m);
-		font-weight: 600;
-		line-height: var(--heading-lineSize-m);
-	}
-
-	&-s {
-		font-family: var(--heading-textSize-s);
-		font-weight: 600;
-		line-height: var(--heading-lineSize-s);
-	}
-
-	&-xs {
-		font-family: var(--heading-textSize-xs);
-		font-weight: 400;
-		letter-spacing: 1px;
-		line-height: var(--heading-lineSize-xs);
-		text-transform: uppercase;
+			@each $property, $value in $extensions {
+				#{$property}: #{$value};
+			}
+		}
 	}
 }

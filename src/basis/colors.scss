@@ -1,0 +1,7 @@
+@use "../maps/colors";
+
+:root {
+	@each $token, $value in colors.$colors {
+		--color-#{$token}: #{$value}; // stylelint-disable-line custom-property-pattern
+	}
+}

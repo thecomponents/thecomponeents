@@ -1,10 +1,12 @@
-@use "./tokens/colors";
-@use "./tokens/typography";
-
 @use "./basis/reset";
+@use "./basis/colors";
+@use "./basis/scale";
+@use "./basis/typography";
 
-@use "src/helpers/fontFamily";
-@use "src/helpers/heading";
-@use "src/helpers/textSizes";
-@use "src/helpers/textStyles";
-@use "src/helpers/textWeight";
+@use "./helpers/fontFamily";
+@use "./helpers/heading";
+@use "./helpers/textColor";
+@use "./helpers/textSizes";
+@use "./helpers/textStyles";
+@use "./helpers/textWeight";
+@use "./helpers/spacing";

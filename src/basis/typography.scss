@@ -1,0 +1,15 @@
+@use "src/maps/typography";
+
+:root {
+	@each $scale, $size, $ratio in typography.$heading {
+		--heading-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
+		--heading-lineSize-#{$scale}: calc(var(--heading-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
+	}
+	@each $scale, $size, $ratio in typography.$text {
+		--text-textSize-#{$scale}: #{$size}; // stylelint-disable-line custom-property-pattern
+		--text-lineSize-#{$scale}: calc(var(--text-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
+	}
+	@each $name, $value in typography.$weight {
+		--textweight-#{$name}: #{$value}; // stylelint-disable-line custom-property-pattern
+	}
+}

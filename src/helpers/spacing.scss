@@ -1,0 +1,13 @@
+@use "../maps/scale";
+
+.spacing {
+	$directions: ("top", "right", "bottom", "left");
+
+	@each $direction in $directions {
+		&-#{$direction} {
+			@each $scale, $value in scale.$scale {
+				margin-#{$direction}: var(--scale-#{$scale});
+			}
+		}
+	}
+}

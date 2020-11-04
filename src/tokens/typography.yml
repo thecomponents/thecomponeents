@@ -1,0 +1,47 @@
+heading:
+  2xl:
+    size: "40px"
+    lineSizeMultiplier: "l"
+  xl:
+    size: "32px"
+    lineSizeMultiplier: "l"
+  l:
+    size: "24px"
+    lineSizeMultiplier: "l"
+  m:
+    size: "16px"
+    lineSizeMultiplier: "l"
+  s:
+    size: "12px"
+    lineSizeMultiplier: "l"
+  xs:
+    size: "10px"
+    lineSizeMultiplier: "l"
+
+text:
+  l:
+    size: "24px"
+    lineSizeMultiplier: "m"
+  m:
+    size: "16px"
+    lineSizeMultiplier: "m"
+  s:
+    size: "12px"
+    lineSizeMultiplier: "s"
+  xs:
+    size: "10px"
+    lineSizeMultiplier: "s"
+
+weight:
+  hairline: 100
+  extralight: 200
+  light: 300
+  regular: 400
+  medium: 500
+  semibold: 600
+  bold: 700
+  extrabold: 800
+  black: 900
+
+import:
+  - "../utils/typography"
