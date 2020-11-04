@@ -16,12 +16,13 @@ if (args.includes(DEBUG_FLAG)) {
   debug = true;
 }
 
-// eslint-disable-next-line no-console
-console.log('start generating scss maps');
+console.log('start generating scss maps'); // eslint-disable-line no-console
 
 categories.forEach((category) => { // eslint-disable-line consistent-return
   let tokens = {};
   let parser;
+  let hasError;
+  let errorMsg;
   const srcFile = path.join(__dirname, `../src/tokens/${category}.yml`);
   const distFile = path.join(__dirname, `../src/maps/${category}.scss`);
 
@@ -29,15 +30,8 @@ categories.forEach((category) => { // eslint-disable-line consistent-return
     const fileContents = fs.readFileSync(srcFile, 'utf8');
     tokens = yaml.safeLoad(fileContents);
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(`— ${category} map could not be generated because of error${!debug ? '; run "build:scssMaps:debug" for details' : ':'}`);
-
-    if (debug) {
-      console.log(error); // eslint-disable-line no-console
-      console.log(' '); // eslint-disable-line no-console
-    }
-
-    return false;
+    hasError = true;
+    errorMsg = error;
   }
 
   switch (config[category]) {
@@ -48,21 +42,27 @@ categories.forEach((category) => { // eslint-disable-line consistent-return
       parser = () => ymlToScssTypographyParser(tokens);
       break;
     case '':
-      // eslint-disable-next-line no-console
-      console.log('parser has not been defined');
-      parser = () => ''; // todo handle consol.logs for empty parser
+      hasError = true;
+      errorMsg = '  parser has not been defined';
       break;
     default:
-      // eslint-disable-next-line no-console
-      console.log('defined parser does not exist');
-      parser = () => ''; // todo handle consol.logs for empty parser
+      hasError = true;
+      errorMsg = '  defined parser does not exist';
   }
 
-  fs.writeFileSync(distFile, parser(), 'utf-8');
+  if (hasError) {
+    // eslint-disable-next-line no-console
+    console.log(`— ${category} map could not be generated because of error${!debug ? '; run "build:scssMaps:debug" for details' : ':'}`);
 
-  // eslint-disable-next-line no-console
-  console.log(`| ${category} map has been created${debug ? `:\n  ${parser()}` : ''}`);
+    if (debug) {
+      console.log(errorMsg); // eslint-disable-line no-console
+      console.log(' '); // eslint-disable-line no-console
+    }
+  } else {
+    fs.writeFileSync(distFile, parser(), 'utf-8');
+
+    console.log(`| ${category} map has been created${debug ? `:\n  ${parser()}` : ''}`); // eslint-disable-line no-console
+  }
 });
 
-// eslint-disable-next-line no-console
-console.log('finish generating maps');
+console.log('finish generating maps'); // eslint-disable-line no-console
