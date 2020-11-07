@@ -43,5 +43,10 @@ weight:
   extrabold: 800
   black: 900
 
+font:
+  base:
+    - "\"Nunito\""
+    - "sans-serif"
+
 import:
   - "../utils/typography"
