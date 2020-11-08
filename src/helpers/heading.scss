@@ -3,22 +3,22 @@
 
 $headingExtensions: (
 	"2xl": (
-		"font-weight": var(--textweight-bold)
+		"font-weight": var(--text-weight-bold)
 	),
 	"xl": (
-		"font-weight": var(--textweight-bold)
+		"font-weight": var(--text-weight-bold)
 	),
 	"l": (
-		"font-weight": var(--textweight-semibold)
+		"font-weight": var(--text-weight-semibold)
 	),
 	"m": (
-		"font-weight": var(--textweight-semibold)
+		"font-weight": var(--text-weight-semibold)
 	),
 	"s": (
-		"font-weight": var(--textweight-semibold)
+		"font-weight": var(--text-weight-semibold)
 	),
 	"xs": (
-		"font-weight": var(--textweight-regular),
+		"font-weight": var(--text-weight-regular),
 		"letter-spacing": 1px,
 		"text-transform": "uppercase",
 	),
@@ -27,7 +27,7 @@ $headingExtensions: (
 .heading {
 	@each $scale, $size, $ratio in typography.$heading {
 		&-#{$scale} {
-			font-family: var(--heading-textSize-#{$scale});
+			font-size: var(--heading-textSize-#{$scale});
 			line-height: var(--heading-lineSize-#{$scale});
 
 			$extensions: map.get($headingExtensions, $scale);
