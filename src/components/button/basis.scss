@@ -1,9 +1,30 @@
 @mixin buttonCore() {
-	border: none;
-	border-radius: 0;
-	background: none;
-	font-family: "Nunito", sans-serif;
-	font-size: 14px;
-	line-height: 100%;
+	display: flex;
+	box-sizing: border-box;
+	width: var(--btn-width);
+	height: var(--btn-widht);
+	padding-top: var(-btn-paddingT) var(-btn-paddingR) var(-btn-paddingB) var(-btn-paddingL);
+	border-top: var(--btn-borderT);
+	border-right: var(--btn-borderR);
+	border-bottom: var(--btn-borderB);
+	border-left: var(--btn-borderL);
+	border-radius: var(--btn-radius);
+	align-items: center;
+	justify-content: center;
+	background: var(--btn-bg);
+	font-family: var(--btn-font);
+	font-size: var(--btn-textsize);
+	font-weight: var(--btn-textweight);
+	line-height: var(--btn-linesize);
 	text-decoration: none;
+	white-space: nowrap;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+	&:active,
+	&:focus {
+		outline: none;
+	}
 }
