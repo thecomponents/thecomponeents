@@ -36,6 +36,10 @@
       width: var(--scale-4xl);
       height: var(--scale-4xl);
     }
+
+    .color-box.bg-white {
+      border: 1px solid var(--color-gray200);
+    }
   </style>
 </head>
 <body>
@@ -46,14 +50,6 @@
   <section id="text-weight" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
   <section id="spacing" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
   <section id="color" class="spacing-bottom-4xl"><h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
-  <section id="button" class="spacing-bottom-4xl">
-    <h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">buttons</h1>
-    <button class="btn">btn button</button>
-    <br>
-    <a href="http://wp.pl" class="btn">btn a</a>
-    <br>
-    <button class="btn btn-light">btn light</button>
-  </section>
 <script type="text/javascript">
   const slipsum = `My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?`;
   const slipsumShort = `Well, the way they make shows is, they make one show. That show's called a pilot. `;
@@ -443,17 +439,6 @@
 
     examplesRender(colorCases, colorEl, 'div', 'bg', '', ['color-box']);
   }
-  // function buttonExamples() {
-  //   const buttonEl = document.getElementById('button');
-  //   const buttonCases = [
-  //     {
-  //       modifier: '',
-  //       details: '',
-  //     }
-  //   ];
-  //
-  //   examplesRender(buttonCases, buttonEl, 'p', 'text', slipsumShort);
-  // }
 
   headingExamples();
   textExamples();
@@ -462,7 +447,6 @@
   textWeightExamples();
   spacingExamples();
   colorExamples();
-  // buttonExamples();
 </script>
 </body>
 </html>
