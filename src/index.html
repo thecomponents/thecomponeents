@@ -8,17 +8,46 @@
     body {
       padding: var(--scale-l);
     }
+
+    .box {
+      display: flex;
+      width: var(--scale-3xl);
+      height: var(--scale-3xl);
+      background: var(--color-red200);
+    }
+
+    .spacing-example {
+      display: flex;
+    }
+    .spacing-example-top,
+    .spacing-example-bottom {
+      flex-direction: column;
+    }
+    .spacing-example-right,
+    .spacing-example-left {
+      flex-direction: row;
+    }
+    .spacing-example-description {
+      flex-grow: 1;
+    }
+
+    .color-box {
+      display: block;
+      width: var(--scale-4xl);
+      height: var(--scale-4xl);
+    }
   </style>
 </head>
 <body>
-  <section id="heading" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">headings</h1></section>
-  <section id="text" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">text sizes</h1></section>
-  <section id="text-color" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">text colors</h1></section>
-  <section id="text-style" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">text styles</h1></section>
-  <section id="text-weight" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">text weights</h1></section>
-  <section id="spacing" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600">spagings</h1></section>
+  <section id="heading" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">headings</h1></section>
+  <section id="text" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text sizes</h1></section>
+  <section id="text-color" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
+  <section id="text-style" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
+  <section id="text-weight" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
+  <section id="spacing" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
+  <section id="color" class="spacing-bottom-4xl"><h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
   <section id="button" class="spacing-bottom-4xl">
-    <h1 class="font-nunito heading-xs text-color600">buttons</h1>
+    <h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">buttons</h1>
     <button class="btn">btn button</button>
     <br>
     <a href="http://wp.pl" class="btn">btn a</a>
@@ -28,12 +57,205 @@
 <script type="text/javascript">
   const slipsum = `My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?`;
   const slipsumShort = `Well, the way they make shows is, they make one show. That show's called a pilot. `;
-  function examplesRender(cases, container, tag, classPrefix, content) {
+  const colorCases = [
+    {
+      modifier: "white",
+      details: "#fff",
+    },
+    {
+      modifier: "black",
+      details: "#000",
+    },
+    {
+      modifier: "gray100",
+      details: "#f2f2f2",
+    },
+    {
+      modifier: "gray200",
+      details: "#ddd",
+    },
+    {
+      modifier: "gray300",
+      details: "#c9c9c9",
+    },
+    {
+      modifier: "gray400",
+      details: "#999",
+    },
+    {
+      modifier: "gray500",
+      details: "#6c6c6c",
+    },
+    {
+      modifier: "gray600",
+      details: "#484848",
+    },
+    {
+      modifier: "gray700",
+      details: " #2e2e2e",
+    },
+    {
+      modifier: "gray800",
+      details: "#1e1e1e",
+    },
+    {
+      modifier: "gray900",
+      details: "#1a1a1a",
+    },
+    {
+      modifier: "blue100",
+      details: "#d1f1ff",
+    },
+    {
+      modifier: "blue200",
+      details: "#a8ddff",
+    },
+    {
+      modifier: "blue300",
+      details: "#7cc9ff",
+    },
+    {
+      modifier: "blue400",
+      details: "#5cb4ff",
+    },
+    {
+      modifier: "blue500",
+      details: "#1493ff",
+    },
+    {
+      modifier: "blue600",
+      details: "#0c6ee2",
+    },
+    {
+      modifier: "blue700",
+      details: "#0451bf",
+    },
+    {
+      modifier: "blue800",
+      details: "#03379a",
+    },
+    {
+      modifier: "blue900",
+      details: "#0a207f",
+    },
+    {
+      modifier: "green100",
+      details: "#eeffce",
+    },
+    {
+      modifier: "green200",
+      details: "#d4ff9a",
+    },
+    {
+      modifier: "green300",
+      details: "#b1fe62",
+    },
+    {
+      modifier: "green400",
+      details: "#93f61b",
+    },
+    {
+      modifier: "green500",
+      details: "#4aed00",
+    },
+    {
+      modifier: "green600",
+      details: "#0c0",
+    },
+    {
+      modifier: "green700",
+      details: " #00ac00",
+    },
+    {
+      modifier: "green800",
+      details: "#008a00",
+    },
+    {
+      modifier: "green900",
+      details: "#007100",
+    },
+    {
+      modifier: "yellow100",
+      details: "#fff7d6",
+    },
+    {
+      modifier: "yellow200",
+      details: "#ffedac",
+    },
+    {
+      modifier: "yellow300",
+      details: "#ffdd7d",
+    },
+    {
+      modifier: "yellow400",
+      details: "#ffd15a",
+    },
+    {
+      modifier: "yellow500",
+      details: "#fb0",
+    },
+    {
+      modifier: "yellow600",
+      details: "#f19300",
+    },
+    {
+      modifier: "yellow700",
+      details: "#cc7100",
+    },
+    {
+      modifier: "yellow800",
+      details: "#a75400",
+    },
+    {
+      modifier: "yellow900",
+      details: "#8b3e00",
+    },
+    {
+      modifier: "red100",
+      details: "#ffe3d2",
+    },
+    {
+      modifier: "red200",
+      details: "#ffbea6",
+    },
+    {
+      modifier: "red300",
+      details: "#ff9277",
+    },
+    {
+      modifier: "red400",
+      details: "#ff6456",
+    },
+    {
+      modifier: "red500",
+      details: "#f00",
+    },
+    {
+      modifier: "red600",
+      details: "#ff0003",
+    },
+    {
+      modifier: "red700",
+      details: "#d9001d",
+    },
+    {
+      modifier: "red800",
+      details: "#ad0022",
+    },
+    {
+      modifier: "red900",
+      details: "#930026",
+    },
+  ];
+  function examplesRender(cases, container, tag, classPrefix, content, extraClasses) {
     cases.forEach((elCase) => {
       const el = document.createElement(tag);
       const details = document.createElement('small');
       const div = document.createElement('div');
       el.classList.add(`${classPrefix}-${elCase.modifier}`);
+      if(extraClasses) {
+        el.classList.add(...extraClasses);
+      }
       el.textContent = content;
       details.classList.add('font-nunito', 'text-s', 'text-gray400');
       details.textContent = `${elCase.modifier} | .${classPrefix}-${elCase.modifier} | ${elCase.details}`;
@@ -100,198 +322,8 @@
   }
   function textColorExamples() {
     const textColorEl = document.getElementById('text-color');
-    const textColorCases = [
-      {
-        modifier: "white",
-        details: "#fff",
-      },
-      {
-        modifier: "black",
-        details: "#000",
-      },
-      {
-        modifier: "gray100",
-        details: "#f2f2f2",
-      },
-      {
-        modifier: "gray200",
-        details: "#ddd",
-      },
-      {
-        modifier: "gray300",
-        details: "#c9c9c9",
-      },
-      {
-        modifier: "gray400",
-        details: "#999",
-      },
-      {
-        modifier: "gray500",
-        details: "#6c6c6c",
-      },
-      {
-        modifier: "gray600",
-        details: "#484848",
-      },
-      {
-        modifier: "gray700",
-        details: " #2e2e2e",
-      },
-      {
-        modifier: "gray800",
-        details: "#1e1e1e",
-      },
-      {
-        modifier: "gray900",
-        details: "#1a1a1a",
-      },
-      {
-        modifier: "blue100",
-        details: "#d1f1ff",
-      },
-      {
-        modifier: "blue200",
-        details: "#a8ddff",
-      },
-      {
-        modifier: "blue300",
-        details: "#7cc9ff",
-      },
-      {
-        modifier: "blue400",
-        details: "#5cb4ff",
-      },
-      {
-        modifier: "blue500",
-        details: "#1493ff",
-      },
-      {
-        modifier: "blue600",
-        details: "#0c6ee2",
-      },
-      {
-        modifier: "blue700",
-        details: "#0451bf",
-      },
-      {
-        modifier: "blue800",
-        details: "#03379a",
-      },
-      {
-        modifier: "blue900",
-        details: "#0a207f",
-      },
-      {
-        modifier: "green100",
-        details: "#eeffce",
-      },
-      {
-        modifier: "green200",
-        details: "#d4ff9a",
-      },
-      {
-        modifier: "green300",
-        details: "#b1fe62",
-      },
-      {
-        modifier: "green400",
-        details: "#93f61b",
-      },
-      {
-        modifier: "green500",
-        details: "#4aed00",
-      },
-      {
-        modifier: "green600",
-        details: "#0c0",
-      },
-      {
-        modifier: "green700",
-        details: " #00ac00",
-      },
-      {
-        modifier: "green800",
-        details: "#008a00",
-      },
-      {
-        modifier: "green900",
-        details: "#007100",
-      },
-      {
-        modifier: "yellow100",
-        details: "#fff7d6",
-      },
-      {
-        modifier: "yellow200",
-        details: "#ffedac",
-      },
-      {
-        modifier: "yellow300",
-        details: "#ffdd7d",
-      },
-      {
-        modifier: "yellow400",
-        details: "#ffd15a",
-      },
-      {
-        modifier: "yellow500",
-        details: "#fb0",
-      },
-      {
-        modifier: "yellow600",
-        details: "#f19300",
-      },
-      {
-        modifier: "yellow700",
-        details: "#cc7100",
-      },
-      {
-        modifier: "yellow800",
-        details: "#a75400",
-      },
-      {
-        modifier: "yellow900",
-        details: "#8b3e00",
-      },
-      {
-        modifier: "red100",
-        details: "#ffe3d2",
-      },
-      {
-        modifier: "red200",
-        details: "#ffbea6",
-      },
-      {
-        modifier: "red300",
-        details: "#ff9277",
-      },
-      {
-        modifier: "red400",
-        details: "#ff6456",
-      },
-      {
-        modifier: "red500",
-        details: "#f00",
-      },
-      {
-        modifier: "red600",
-        details: "#ff0003",
-      },
-      {
-        modifier: "red700",
-        details: "#d9001d",
-      },
-      {
-        modifier: "red800",
-        details: "#ad0022",
-      },
-      {
-        modifier: "red900",
-        details: "#930026",
-      },
-    ];
 
-    examplesRender(textColorCases, textColorEl, 'p', 'text', slipsumShort);
+    examplesRender(colorCases, textColorEl, 'p', 'text', slipsumShort);
   }
   function textStyleExamples() {
     const textStyleEl = document.getElementById('text-style');
@@ -349,37 +381,79 @@
   }
   function spacingExamples() {
     const spacingEl = document.getElementById('spacing');
-    const spacingCases = [
+    const directions = ['top', 'right', 'bottom', 'left'];
+    const scale = [
       {
-        modifier: '',
-        details: '',
-      }
+        modifier: 'xs',
+        details: '2px',
+      },
+      {
+        modifier: 's',
+        details: '4px',
+      },
+      {
+        modifier: 'm',
+        details: '8px',
+      },
+      {
+        modifier: 'l',
+        details: '16px',
+      },
+      {
+        modifier: 'xl',
+        details: '24px',
+      },
+      {
+        modifier: '2xl',
+        details: '32px',
+      },
+      {
+        modifier: '3xl',
+        details: '48px',
+      },
+      {
+        modifier: '4xl',
+        details: '64px',
+      },
     ];
 
-    examplesRender(spacingCases, spacingEl, 'div', 'spacing', '', 'box');
-  }
-  function buttonExamples() {
-    const buttonEl = document.getElementById('button');
-    const buttonCases = [
-      {
-        modifier: '',
-        details: '',
-      }
-    ];
+    directions.forEach((direction) => {
+      scale.forEach((scale) => {
+        const div = document.createElement('div');
+        const examplesBlock = document.createElement('div');
+        const details = document.createElement('small');
+        details.classList.add('font-nunito', 'text-s', 'text-gray400');
+        details.textContent = `${direction} ${scale.modifier} | .spacing-${direction}-${scale.modifier} | ${scale.details}`;
+        div.classList.add('spacing-bottom-2xl');
+        examplesBlock.classList.add('spacing-example', `spacing-example-${direction}`);
 
-    examplesRender(buttonCases, buttonEl, 'p', 'text', slipsumShort);
+        for (let step = 0; step < 5; step++) {
+          const el = document.createElement('span');
+          el.classList.add('box', `spacing-${direction}-${scale.modifier}`);
+          examplesBlock.appendChild(el);
+        }
+        div.appendChild(examplesBlock);
+        div.appendChild(details);
+        spacingEl.appendChild(div);
+      });
+    });
   }
-  function colorExamoles() {
+  function colorExamples() {
     const colorEl = document.getElementById('color');
-    const colorCases = [
-      {
-        modifier: '',
-        details: '',
-      }
-    ];
 
-    examplesRender(colorCases, colorEl, 'div', 'bg', '');
+    examplesRender(colorCases, colorEl, 'div', 'bg', '', ['color-box']);
   }
+  // function buttonExamples() {
+  //   const buttonEl = document.getElementById('button');
+  //   const buttonCases = [
+  //     {
+  //       modifier: '',
+  //       details: '',
+  //     }
+  //   ];
+  //
+  //   examplesRender(buttonCases, buttonEl, 'p', 'text', slipsumShort);
+  // }
 
   headingExamples();
   textExamples();
@@ -387,8 +461,8 @@
   textStyleExamples();
   textWeightExamples();
   spacingExamples();
-  buttonExamples();
-  // colorExamoles();
+  colorExamples();
+  // buttonExamples();
 </script>
 </body>
 </html>
