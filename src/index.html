@@ -59,6 +59,7 @@
     <li><a href="#text-color">text color</a></li>
     <li><a href="#text-style">text style</a></li>
     <li><a href="#text-weight">text weight</a></li>
+    <li><a href="#text-align">text align</a></li>
     <li><a href="#spacing">spacing</a></li>
     <li><a href="#color">color</a></li>
   </ul>
@@ -67,6 +68,7 @@
   <section id="text-color" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
   <section id="text-style" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
   <section id="text-weight" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
+  <section id="text-align" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
   <section id="spacing" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
   <section id="color" class="block spacing-bottom-4xl"><h1 class="font-worksans heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
 <script type="text/javascript">
@@ -394,6 +396,29 @@
 
     examplesRender(textWeightCases, textWeightEl, 'p', 'weight', slipsumShort);
   }
+  function textAlignExamples() {
+    const textAlignEl = document.getElementById('text-align');
+    const textAlignCases = [
+      {
+        modifier: 'left',
+        details: 'left',
+      },
+      {
+        modifier: 'right',
+        details: 'right',
+      },
+      {
+        modifier: 'center',
+        details: 'center',
+      },
+      {
+        modifier: 'justify',
+        details: 'justify',
+      },
+    ];
+
+    examplesRender(textAlignCases, textAlignEl, 'p', 'text', slipsum);
+  }
   function spacingExamples() {
     const spacingEl = document.getElementById('spacing');
     const directions = ['top', 'right', 'bottom', 'left'];
@@ -471,6 +496,7 @@
   textColorExamples();
   textStyleExamples();
   textWeightExamples();
+  textAlignExamples();
   spacingExamples();
   colorExamples();
   navMargin();
