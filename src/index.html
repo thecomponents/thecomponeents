@@ -40,16 +40,35 @@
     .color-box.bg-white {
       border: 1px solid var(--color-gray200);
     }
+
+    #nav {
+      position: sticky;
+      top: var(--scale-m);
+      bottom: 0;
+      margin-left: var(--scale-l);
+    }
+    .block {
+      margin-left: 150px;
+    }
   </style>
 </head>
 <body>
-  <section id="heading" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">headings</h1></section>
-  <section id="text" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text sizes</h1></section>
-  <section id="text-color" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
-  <section id="text-style" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
-  <section id="text-weight" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
-  <section id="spacing" class="font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
-  <section id="color" class="spacing-bottom-4xl"><h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
+  <ul id="nav" class="font-nunito text-m">
+    <li><a href="#heading">heading</a></li>
+    <li><a href="#text">text</a></li>
+    <li><a href="#text-color">text color</a></li>
+    <li><a href="#text-style">text style</a></li>
+    <li><a href="#text-weight">text weight</a></li>
+    <li><a href="#spacing">spacing</a></li>
+    <li><a href="#color">color</a></li>
+  </ul>
+  <section id="heading" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">headings</h1></section>
+  <section id="text" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text sizes</h1></section>
+  <section id="text-color" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
+  <section id="text-style" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
+  <section id="text-weight" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
+  <section id="spacing" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
+  <section id="color" class="block spacing-bottom-4xl"><h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
 <script type="text/javascript">
   const slipsum = `My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?`;
   const slipsumShort = `Well, the way they make shows is, they make one show. That show's called a pilot. `;
@@ -439,6 +458,13 @@
 
     examplesRender(colorCases, colorEl, 'div', 'bg', '', ['color-box']);
   }
+  function navMargin() {
+    const navEl = document.getElementById('nav');
+    const rect = navEl.getBoundingClientRect();
+
+    console.log(rect.height);
+    navEl.style.marginBottom = `-${rect.height}px`;
+  }
 
   headingExamples();
   textExamples();
@@ -447,6 +473,7 @@
   textWeightExamples();
   spacingExamples();
   colorExamples();
+  navMargin();
 </script>
 </body>
 </html>
