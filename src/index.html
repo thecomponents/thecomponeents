@@ -53,7 +53,7 @@
   </style>
 </head>
 <body>
-  <ul id="nav" class="font-nunito text-m">
+  <ul id="nav" class="font-worksans text-m">
     <li><a href="#heading">heading</a></li>
     <li><a href="#text">text</a></li>
     <li><a href="#text-color">text color</a></li>
@@ -62,13 +62,13 @@
     <li><a href="#spacing">spacing</a></li>
     <li><a href="#color">color</a></li>
   </ul>
-  <section id="heading" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">headings</h1></section>
-  <section id="text" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text sizes</h1></section>
-  <section id="text-color" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
-  <section id="text-style" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
-  <section id="text-weight" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
-  <section id="spacing" class="block font-nunito spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
-  <section id="color" class="block spacing-bottom-4xl"><h1 class="font-nunito heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
+  <section id="heading" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">headings</h1></section>
+  <section id="text" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text sizes</h1></section>
+  <section id="text-color" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text colors</h1></section>
+  <section id="text-style" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text styles</h1></section>
+  <section id="text-weight" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">text weights</h1></section>
+  <section id="spacing" class="block font-worksans spacing-bottom-4xl"><h1 class="heading-xs text-color600 spacing-bottom-s">spagings</h1></section>
+  <section id="color" class="block spacing-bottom-4xl"><h1 class="font-worksans heading-xs text-color600 spacing-bottom-s">bg colors</h1></section>
 <script type="text/javascript">
   const slipsum = `My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?`;
   const slipsumShort = `Well, the way they make shows is, they make one show. That show's called a pilot. `;
@@ -272,7 +272,7 @@
         el.classList.add(...extraClasses);
       }
       el.textContent = content;
-      details.classList.add('font-nunito', 'text-s', 'text-gray400');
+      details.classList.add('font-worksans', 'text-s', 'text-gray400');
       details.textContent = `${elCase.modifier} | .${classPrefix}-${elCase.modifier} | ${elCase.details}`;
       div.classList.add('spacing-bottom-2xl');
 
@@ -437,7 +437,7 @@
         const div = document.createElement('div');
         const examplesBlock = document.createElement('div');
         const details = document.createElement('small');
-        details.classList.add('font-nunito', 'text-s', 'text-gray400');
+        details.classList.add('font-worksans', 'text-s', 'text-gray400');
         details.textContent = `${direction} ${scale.modifier} | .spacing-${direction}-${scale.modifier} | ${scale.details}`;
         div.classList.add('spacing-bottom-2xl');
         examplesBlock.classList.add('spacing-example', `spacing-example-${direction}`);
