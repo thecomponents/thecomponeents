@@ -24,7 +24,7 @@ text:
     lineSizeMultiplier: "m"
   m:
     size: "16px"
-    lineSizeMultiplier: "m"
+    lineSizeMultiplier: "s"
   s:
     size: "12px"
     lineSizeMultiplier: "s"
