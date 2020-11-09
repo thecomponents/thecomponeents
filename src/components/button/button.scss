@@ -1,0 +1,45 @@
+@use "./basis";
+@use "./decisions";
+
+.btn {
+	@include basis.buttonCore;
+
+	--btn-width: #{decisions.$btn-widthContent};
+	--btn-height: #{decisions.$btn-height};
+	--btn-paddingT: #{decisions.$btn-paddingT};
+	--btn-paddingR: #{decisions.$btn-paddingR};
+	--btn-paddingB: #{decisions.$btn-paddingB};
+	--btn-paddingL: #{decisions.$btn-paddingL};
+	--btn-borderT: #{decisions.$btn-borderT};
+	--btn-borderR: #{decisions.$btn-borderR};
+	--btn-borderB: #{decisions.$btn-borderB};
+	--btn-borderL: #{decisions.$btn-borderL};
+	--btn-radius: #{decisions.$btn-radius};
+	--btn-bg: #{decisions.$btn-bg};
+	--btn-font: #{decisions.$btn-font};
+	--btn-txtcolor: #{decisions.$btn-txtcolor};
+	--btn-txtsize: #{decisions.$btn-txtsize};
+	--btn-txtweight: #{decisions.$btn-txtweight};
+	--btn-linesize: #{decisions.$btn-linesize};
+	--btn-hover-borderT: #{decisions.$btn-hover-borderT};
+	--btn-hover-borderR: #{decisions.$btn-hover-borderR};
+	--btn-hover-borderB: #{decisions.$btn-hover-borderB};
+	--btn-hover-borderL: #{decisions.$btn-hover-borderL};
+	--btn-hover-bg: #{decisions.$btn-hover-bg};
+	--btn-hover-txtcolor: #{decisions.$btn-hover-txtcolor};
+
+	&-light {
+		--btn-bg: #{decisions.$btn-light-bg};
+		--btn-borderT: #{decisions.$btn-light-borderT};
+		--btn-borderR: #{decisions.$btn-light-borderR};
+		--btn-borderB: #{decisions.$btn-light-borderB};
+		--btn-borderL: #{decisions.$btn-light-borderL};
+		--btn-txtcolor: #{decisions.$btn-light-txtcolor};
+		--btn-hover-borderT: #{decisions.$btn-hoverlight-borderT};
+		--btn-hover-borderR: #{decisions.$btn-hoverlight-borderR};
+		--btn-hover-borderB: #{decisions.$btn-hoverlight-borderB};
+		--btn-hover-borderL: #{decisions.$btn-hoverlight-borderL};
+		--btn-hover-bg: #{decisions.$btn-hoverlight-bg};
+		--btn-hover-txtcolor: #{decisions.$btn-hoverlight-txtcolor};
+	}
+}
