@@ -1,9 +1,9 @@
-@use "src/maps/typography";
+@use "../maps/typography";
 
 .text {
 	@each $scale, $size, $ratio in typography.$text {
 		&-#{$scale} {
-			font-family: var(--text-textSize-#{$scale});
+			font-size: var(--text-textSize-#{$scale});
 			line-height: var(--text-lineSize-#{$scale});
 		}
 	}

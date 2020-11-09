@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const SvgToMiniDataURI = require('mini-svg-data-uri');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   devtool: 'eval',
@@ -42,6 +43,9 @@ const config = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
     new MiniCssExtractPlugin({
       filename: 'library.css',
     }),
