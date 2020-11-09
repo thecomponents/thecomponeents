@@ -1,0 +1,39 @@
+$btn-widthContent: fit-content;
+$btn-height: var(--scale-2xl);
+$btn-paddingT: 0;
+$btn-paddingR: var(--scale-l);
+$btn-paddingB: 0;
+$btn-paddingL: var(--scale-l);
+$btn-borderT: none;
+$btn-borderR: none;
+$btn-borderB: none;
+$btn-borderL: none;
+$btn-radius: var(--scale-xs);
+$btn-bg: var(--color-blue500);
+$btn-font: var(--font-base);
+$btn-txtcolor: var(--color-white);
+$btn-txtsize: var(--text-textSize-m);
+$btn-txtweight: var(--text-weight-medium);
+$btn-linesize: var(--text-lineSize-m);
+
+// hover
+$btn-hover-borderT: none;
+$btn-hover-borderR: none;
+$btn-hover-borderB: none;
+$btn-hover-borderL: none;
+$btn-hover-bg: var(--color-blue700);
+$btn-hover-txtcolor: var(--color-white);
+
+// light weight
+$btn-light-bg: transparent;
+$btn-light-borderT: 1px solid $btn-bg;
+$btn-light-borderR: 1px solid $btn-bg;
+$btn-light-borderB: 1px solid $btn-bg;
+$btn-light-borderL: 1px solid $btn-bg;
+$btn-light-txtcolor: $btn-bg;
+$btn-hoverlight-bg: var(--color-blue100);
+$btn-hoverlight-borderT: 1px solid $btn-hover-bg;
+$btn-hoverlight-borderR: 1px solid $btn-hover-bg;
+$btn-hoverlight-borderB: 1px solid $btn-hover-bg;
+$btn-hoverlight-borderL: 1px solid $btn-hover-bg;
+$btn-hoverlight-txtcolor: $btn-hover-bg;

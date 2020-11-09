@@ -1,0 +1,41 @@
+@mixin buttonCore() {
+	display: flex;
+	box-sizing: border-box;
+	width: var(--btn-width);
+	height: var(--btn-height);
+	padding: var(--btn-paddingT) var(--btn-paddingR) var(--btn-paddingB) var(--btn-paddingL);
+	border-top: var(--btn-borderT);
+	border-right: var(--btn-borderR);
+	border-bottom: var(--btn-borderB);
+	border-left: var(--btn-borderL);
+	border-radius: var(--btn-radius);
+	align-items: center;
+	justify-content: center;
+	background-color: var(--btn-bg);
+	color: var(--btn-txtcolor);
+	font-family: var(--btn-font);
+	font-size: var(--btn-txtsize);
+	font-weight: var(--btn-txtweight);
+	line-height: var(--btn-linesize);
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+	&:active,
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		border-top: var(--btn-hover-borderT);
+		border-right: var(--btn-hover-borderR);
+		border-bottom: var(--btn-hover-borderB);
+		border-left: var(--btn-hover-borderL);
+		background-color: var(--btn-hover-bg);
+		color: var(--btn-hover-txtcolor);
+	}
+}
