@@ -1,0 +1,9 @@
+@use "../maps/colors";
+
+.bg {
+	@each $color, $value in colors.$colors {
+		&-#{$color} {
+			background-color: var(--color-#{$color});
+		}
+	}
+}
