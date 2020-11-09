@@ -1,4 +1,4 @@
-@use "src/maps/typography";
+@use "../maps/typography";
 
 :root {
 	@each $scale, $size, $ratio in typography.$heading {
@@ -10,6 +10,9 @@
 		--text-lineSize-#{$scale}: calc(var(--text-textSize-#{$scale}) * #{$ratio}); // stylelint-disable-line custom-property-pattern
 	}
 	@each $name, $value in typography.$weight {
-		--textweight-#{$name}: #{$value}; // stylelint-disable-line custom-property-pattern
+		--text-weight-#{$name}: #{$value}; // stylelint-disable-line custom-property-pattern
+	}
+	@each $name, $value in typography.$font {
+		--font-#{$name}: #{$value}; // stylelint-disable-line custom-property-pattern
 	}
 }

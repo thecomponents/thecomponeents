@@ -1,24 +1,48 @@
 const ymlToScssMapParser = require('./ymlToScssMapParser');
+const ymlToScssListParser = require('./ymlToScssListParser');
 
 function ymlToScssTypographyParser(data) {
-  const typography = [];
-  let imports = '';
-  let weights = '';
+  let typography = '';
 
   Object.keys(data).forEach((typographyCategory) => {
     if (typographyCategory === 'import') {
+      let imports = '';
+
       data[typographyCategory].forEach((importSrc) => {
         const currentImport = `@import "${importSrc}";\n`;
 
-        imports += currentImport;
+        imports += `${currentImport}`;
       });
+
+      typography = `${imports}\n${typography}`;
     } else if (typographyCategory === 'weight') {
       const dataWithKey = {
-        weight: {
+        [typographyCategory]: {
           ...data[typographyCategory],
         },
       };
-      weights = ymlToScssMapParser(dataWithKey);
+
+      typography += `${ymlToScssMapParser(dataWithKey)}\n`;
+    } else if (typographyCategory === 'font') {
+      const dataWithKey = {
+        [typographyCategory]: {},
+      };
+
+      Object.keys(data[typographyCategory]).forEach((family) => {
+        let familyValue = '';
+
+        data[typographyCategory][family].forEach((font, index) => {
+          if (index > 0) {
+            familyValue += `, ${font}`;
+          } else {
+            familyValue += font;
+          }
+        });
+
+        dataWithKey[typographyCategory][family] = familyValue;
+      });
+
+      typography += `${ymlToScssMapParser(dataWithKey)}\n`;
     } else {
       const keyCategory = { [typographyCategory]: [] };
       let keyScale;
@@ -33,22 +57,11 @@ function ymlToScssTypographyParser(data) {
         keyCategory[typographyCategory].push(`('${keyScale}' ${keySize} $lhRatio-${keyMultiplier})`);
       });
 
-      typography.push(keyCategory);
+      typography += `${ymlToScssListParser(keyCategory)}\n`;
     }
   });
 
-  const parsedTypography = JSON.stringify(typography)
-    .slice(2, -2) // remove beginning [{ and end }]
-    .replace(/:\[/g, ': (\n') // remove :[ and add new line
-    .replace(/]/g, '\n);\n') // replace ] with ; and new line
-    .replace(/},{/g, '\n') // change array keys separator with new line
-    .replace(/","/g, ',\n') // break lines
-    .replace(/"/g, '') // remove doublequotes
-    .replace(/'/g, '"') // replace single quotes with doublequotes
-    .replace(/\("/g, '\t("') // add tab indents
-    .replace(/[a-z0-9]\w+:/g, (s) => `$${s}`); // add $ to key name
-
-  return `${imports}\n${parsedTypography}\n${weights}`;
+  return typography;
 }
 
 module.exports = ymlToScssTypographyParser;

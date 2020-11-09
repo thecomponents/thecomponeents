@@ -6,7 +6,9 @@
 	@each $direction in $directions {
 		&-#{$direction} {
 			@each $scale, $value in scale.$scale {
-				margin-#{$direction}: var(--scale-#{$scale});
+				&-#{$scale} {
+					margin-#{$direction}: var(--scale-#{$scale});
+				}
 			}
 		}
 	}
