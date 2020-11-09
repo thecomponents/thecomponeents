@@ -1,10 +1,26 @@
+@use "sass:map";
 @use "../maps/typography";
+
+$textExtensions: (
+	"l": (
+		"font-weight": var(--text-weight-light)
+	),
+	"xs": (
+		"letter-spacing": 0.47px,
+	),
+);
 
 .text {
 	@each $scale, $size, $ratio in typography.$text {
 		&-#{$scale} {
 			font-size: var(--text-textSize-#{$scale});
 			line-height: var(--text-lineSize-#{$scale});
+
+			$extensions: map.get($textExtensions, $scale);
+
+			@each $property, $value in $extensions {
+				#{$property}: #{$value};
+			}
 		}
 	}
 }
