@@ -1,21 +1,21 @@
 heading:
   2xl:
-    size: "40px"
+    size: "48px"
     lineSizeMultiplier: "l"
   xl:
-    size: "32px"
+    size: "36px"
     lineSizeMultiplier: "l"
   l:
-    size: "24px"
+    size: "32px"
     lineSizeMultiplier: "l"
   m:
-    size: "16px"
+    size: "24px"
     lineSizeMultiplier: "l"
   s:
-    size: "12px"
+    size: "18px"
     lineSizeMultiplier: "l"
   xs:
-    size: "10px"
+    size: "12px"
     lineSizeMultiplier: "l"
 
 text:
@@ -24,7 +24,7 @@ text:
     lineSizeMultiplier: "m"
   m:
     size: "16px"
-    lineSizeMultiplier: "m"
+    lineSizeMultiplier: "s"
   s:
     size: "12px"
     lineSizeMultiplier: "s"
@@ -45,7 +45,7 @@ weight:
 
 font:
   base:
-    - "\"Nunito\""
+    - "\"Work Sans\""
     - "sans-serif"
 
 import:

@@ -6,20 +6,20 @@ $headingExtensions: (
 		"font-weight": var(--text-weight-bold)
 	),
 	"xl": (
-		"font-weight": var(--text-weight-bold)
+		"font-weight": var(--text-weight-semibold)
 	),
 	"l": (
-		"font-weight": var(--text-weight-semibold)
+		"font-weight": var(--text-weight-light)
 	),
 	"m": (
 		"font-weight": var(--text-weight-semibold)
 	),
 	"s": (
-		"font-weight": var(--text-weight-semibold)
+		"font-weight": var(--text-weight-bold)
 	),
 	"xs": (
 		"font-weight": var(--text-weight-regular),
-		"letter-spacing": 1px,
+		"letter-spacing": 2.35px,
 		"text-transform": "uppercase",
 	),
 );
